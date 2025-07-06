@@ -22,7 +22,7 @@ This project builds an AI-powered internal assistant for **CrediTrust Financial*
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Samrizee/creditrust-RAG.git
 cd creditrust-rag
 
 

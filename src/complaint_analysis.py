@@ -109,9 +109,14 @@ def clean_text(text, stop_words, lemmatizer):
     return ' '.join(filtered_words)
 
 def apply_text_cleaning(df, stop_words, lemmatizer):
-    """Apply the text cleaning function to the complaints narratives."""
-    df['cleaned_narrative'] = df['Consumer complaint narrative'].apply(lambda x: clean_text(x, stop_words, lemmatizer))
+    """Clean the 'Consumer complaint narrative' column using stop words and lemmatization."""
+    
+    def process_text(text):
+        return clean_text(text, stop_words, lemmatizer)
+    
+    df['cleaned_narrative'] = df['Consumer complaint narrative'].apply(process_text)
     print("Text cleaning applied to 'Consumer complaint narrative' column.")
+
 
 def save_cleaned_data(df, output_file_path):
     """Save the cleaned and filtered dataset to a CSV file."""

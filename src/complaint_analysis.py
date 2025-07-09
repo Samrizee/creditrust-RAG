@@ -120,7 +120,7 @@ def apply_text_cleaning(df, stop_words, lemmatizer):
 
 def save_cleaned_data(df, output_file_path):
     """Save the cleaned and filtered dataset to a CSV file."""
-    final_df = df[['Product', 'cleaned_narrative']].copy()
+    final_df = df.copy()
     final_df.to_csv(output_file_path, index=False, encoding='utf-8')
     print(f"\nCleaned and filtered data saved successfully to: {output_file_path}")
     print(f"Shape of the saved data: {final_df.shape}")
